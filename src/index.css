@@ -1,5 +1,7 @@
 :root {
   font-size: 16px;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -11,7 +13,7 @@ body {
 
 .navbar {
   background-color: #242424;
-  height: 20vh;
+  height: 15vh;
   font-size: 2rem;
   padding-left: 10vw;
   display: flex;
@@ -25,7 +27,86 @@ body {
   text-decoration: none;
 }
 
+#appBody {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-evenly;
+  gap: 1.25rem;
+}
+
 .appPictureContainer {
+  border: 2px solid #999999;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.appPictureContainer:hover {
+  border: 2px solid orange;
+}
+
+.appPicture {
+  height: 150px;
+  width: 300px;
+}
+
+.appPictureLink {
   color: white;
   text-decoration: none;
+}
+
+.appPictureName {
+  border-top: 1px solid #999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+#gameImageContainer {
+  background-color: blue;
+}
+
+#gameImageContainer img {
+  height: 580px;
+  width: 1031px;
+}
+
+#gameBody {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .game .navbar {
+    width: 1031px;
+  }
+
+  #gameBody {
+    margin-left: 535px;
+  }
+
+  #gameImageContainer img {
+    height: 580px;
+    width: 1031px;
+  }
+
+  #appBody {
+    grid-template-columns: auto auto;
+  }
+
+  .appPictureContainer {
+    border: 2px solid #999999;
+    width: 202px;
+  }
+
+  .appPicture {
+    height: 100px;
+    width: 200px;
+  }
+
+  .appPictureName {
+    font-size: 1rem;
+  }
 }
