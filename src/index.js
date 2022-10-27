@@ -35,8 +35,6 @@ root.render(
  */
 
 /* photo loads up
- * add functionality to add multiple photos to choose from
- * have user choose between different photos
  * maybe use routes to acomplish this homepage->game->add score->homepage
  * have scores shown off on home page
  */
