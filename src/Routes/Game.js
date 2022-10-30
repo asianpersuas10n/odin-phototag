@@ -95,6 +95,7 @@ function Game() {
       randomNum = Math.floor(Math.random() * 9 + 1);
     }
     setObjectsUsed((current) => current.concat(randomNum));
+    console.log(find);
     setCurrentFind(find[randomNum]);
   }
 

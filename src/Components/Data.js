@@ -1,4 +1,5 @@
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
+import { db } from "../Firebase";
 import photo1 from "../Images/photo1.jpeg";
 import photo2 from "../Images/photo2.jpg";
 import photo3 from "../Images/photo3.jpg";
@@ -9,111 +10,55 @@ export const StoreContext = createContext(null);
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({ children }) => {
-  const imageData = [
-    {
-      name: "Buckets of Buttons and Beads",
-      pictureLink: photo1,
-      find: [
+  const [loadingBool, setLoadingBool] = useState(false);
+  const [imageData, setImageData] = useState();
+
+  useEffect(() => {
+    const fetchFind = async () => {
+      const response = db.collection("locations");
+      const data = await response.get();
+      const itemData = data.docs[0].data();
+
+      setImageData([
         {
-          name: "A smile as cute as a button",
-          left: 474,
-          right: 507,
-          top: 265,
-          bottom: 298,
+          name: "Buckets of Buttons and Beads",
+          pictureLink: photo1,
+          find: itemData.one,
         },
         {
-          name: "A dog looking a bit spotty",
-          left: 895,
-          right: 968,
-          top: 36,
-          bottom: 93,
+          name: "A Small City",
+          pictureLink: photo2,
+          find: itemData.two,
         },
         {
-          name: "Choo Choo",
-          left: 608,
-          right: 676,
-          top: 339,
-          bottom: 400,
+          name: "Glass By The SeaShore",
+          pictureLink: photo3,
+          find: itemData.three,
         },
         {
-          name: "I'm a bit of a fan",
-          left: 745,
-          right: 793,
-          top: -1,
-          bottom: 36,
+          name: "Modern Highway",
+          pictureLink: photo4,
+          find: itemData.four,
         },
         {
-          name: "Potassium",
-          left: 356,
-          right: 424,
-          top: 146,
-          bottom: 217,
+          name: "Cyberpunk 2077",
+          pictureLink: photo5,
+          find: itemData.five,
         },
         {
-          name: "A",
-          left: 332,
-          right: 386,
-          top: 414,
-          bottom: 462,
+          name: "Circus",
+          pictureLink: photo6,
+          find: itemData.five,
         },
-        {
-          name: "This hat probably belongs to the rhinestone cowboy",
-          left: 64,
-          right: 131,
-          top: 200,
-          bottom: 270,
-        },
-        {
-          name: "Strawberry nice to meet you",
-          left: 501,
-          right: 554,
-          top: 185,
-          bottom: 249,
-        },
-        {
-          name: "A marble in a sea of beads",
-          left: 656,
-          right: 729,
-          top: 514,
-          bottom: 571,
-        },
-        {
-          name: "If the boot fits",
-          left: 543,
-          right: 606,
-          top: 362,
-          bottom: 413,
-        },
-      ],
-    },
-    {
-      name: "A Small City",
-      pictureLink: photo2,
-      find: [],
-    },
-    {
-      name: "Glass By The SeaShore",
-      pictureLink: photo3,
-      find: [],
-    },
-    {
-      name: "Mordern Highway",
-      pictureLink: photo4,
-      find: [],
-    },
-    {
-      name: "Cyberpunk 2077",
-      pictureLink: photo5,
-      find: [],
-    },
-    {
-      name: "Circus",
-      pictureLink: photo6,
-      find: [],
-    },
-  ];
+      ]);
+      setLoadingBool(true);
+    };
+    fetchFind();
+  }, []);
+
   const store = {
     imageDataStore: [imageData],
+    loadingBoolStore: [loadingBool],
   };
 
   return (

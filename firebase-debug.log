@@ -1,0 +1,62 @@
+[debug] [2022-10-28T00:49:04.626Z] ----------------------------------------------------------------------
+[debug] [2022-10-28T00:49:04.628Z] Command:       /home/nick/.nvm/versions/node/v16.16.0/bin/node /home/nick/.nvm/versions/node/v16.16.0/bin/firebase init
+[debug] [2022-10-28T00:49:04.629Z] CLI Version:   11.15.0
+[debug] [2022-10-28T00:49:04.629Z] Platform:      linux
+[debug] [2022-10-28T00:49:04.629Z] Node Version:  v16.16.0
+[debug] [2022-10-28T00:49:04.630Z] Time:          Thu Oct 27 2022 19:49:04 GMT-0500 (Central Daylight Time)
+[debug] [2022-10-28T00:49:04.630Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-10-28T00:49:04.636Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-10-28T00:49:04.637Z] > authorizing via signed-in user (nicholasjpenaranda@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/nick/repos/odin-phototag
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2022-10-28T00:49:24.973Z] > refreshing access token with scopes: []
+[debug] [2022-10-28T00:49:24.975Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-10-28T00:49:24.975Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-10-28T00:49:25.874Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-10-28T00:49:25.874Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-10-28T00:49:25.880Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2022-10-28T00:49:26.749Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2022-10-28T00:49:26.749Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project phototag-71585 (PhotoTag) 
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2022-10-28T00:49:29.808Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/phototag-71585/services/firebasedatabase.googleapis.com [none]
+[debug] [2022-10-28T00:49:29.808Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/phototag-71585/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/phototag-71585
+[debug] [2022-10-28T00:49:30.280Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/phototag-71585/services/firebasedatabase.googleapis.com 200
+[debug] [2022-10-28T00:49:30.280Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/phototag-71585/services/firebasedatabase.googleapis.com [omitted]
+[warn] ⚠  database: missing required API firebasedatabase.googleapis.com. Enabling now... 
+[debug] [2022-10-28T00:49:30.281Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/phototag-71585/services/firebasedatabase.googleapis.com:enable [none]
+[debug] [2022-10-28T00:49:30.281Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/phototag-71585/services/firebasedatabase.googleapis.com:enable x-goog-quota-user=projects/phototag-71585
+[debug] [2022-10-28T00:49:30.815Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/phototag-71585/services/firebasedatabase.googleapis.com:enable 200
+[debug] [2022-10-28T00:49:30.815Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/phototag-71585/services/firebasedatabase.googleapis.com:enable [omitted]
+[debug] [2022-10-28T00:49:40.827Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/phototag-71585/services/firebasedatabase.googleapis.com [none]
+[debug] [2022-10-28T00:49:40.827Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/phototag-71585/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/phototag-71585
+[debug] [2022-10-28T00:49:41.609Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/phototag-71585/services/firebasedatabase.googleapis.com 200
+[debug] [2022-10-28T00:49:41.610Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/phototag-71585/services/firebasedatabase.googleapis.com [omitted]
+[info] ✔  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2022-10-28T00:49:41.612Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/phototag-71585 [none]
+[debug] [2022-10-28T00:49:42.158Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/phototag-71585 200
+[debug] [2022-10-28T00:49:42.159Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/phototag-71585 {"projectId":"phototag-71585","projectNumber":"191189330550","displayName":"PhotoTag","name":"projects/phototag-71585","resources":{"hostingSite":"phototag-71585","storageBucket":"phototag-71585.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_d936b326-28ed-4084-afd8-ef834e05240c"}
+[info] 
+[info] Firebase Realtime Database Security Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
