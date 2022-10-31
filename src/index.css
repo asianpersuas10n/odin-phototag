@@ -64,6 +64,10 @@ body {
   border: 2px solid orange;
 }
 
+.appPictureContainer:hover .appPictureName {
+  border-top: 1px solid orange;
+}
+
 .appPicture {
   height: 150px;
   width: 300px;
@@ -192,7 +196,7 @@ table tbody tr {
 }
 
 table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
+  background-color: #000000;
 }
 
 table tbody tr:last-of-type {
@@ -234,5 +238,16 @@ table tbody tr.active-row {
 
   .appPictureName {
     font-size: 1rem;
+  }
+
+  .scoreboard {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-evenly;
+    gap: 1.25rem;
+  }
+
+  table {
+    min-width: 300px;
   }
 }

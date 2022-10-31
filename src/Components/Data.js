@@ -48,7 +48,7 @@ export default ({ children }) => {
         {
           name: "Circus",
           pictureLink: photo6,
-          find: itemData.five,
+          find: itemData.six,
         },
       ]);
       setLoadingBool(true);
