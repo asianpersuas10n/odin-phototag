@@ -32,7 +32,6 @@ function App() {
                         find: data.find,
                       }}
                     >
-                      {console.log(data.find)}
                       <img
                         className="appPicture"
                         src={data.pictureLink}
