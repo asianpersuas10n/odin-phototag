@@ -10,12 +10,12 @@ function Navbar({ time, currentFindName, wrongGuesses, objectsFound }) {
       <div id="timer">
         <div>{time && time}</div>
         <div>
-          Correct: {objectsFound >= 1 ? "O" : "_"},{" "}
-          {objectsFound >= 2 ? "O" : "_"}, {objectsFound >= 3 ? "O" : "_"}
+          Correct: {objectsFound >= 1 ? "O" : "_"} ,{"  "}
+          {objectsFound >= 2 ? "O" : "_"} , {objectsFound >= 3 ? "O" : "_"}
         </div>
         <div>
-          Wrong: {wrongGuesses >= 1 ? "X" : "_"},{" "}
-          {wrongGuesses >= 2 ? "X" : "_"}, {wrongGuesses >= 3 ? "X" : "_"}
+          Wrong: {wrongGuesses >= 1 ? "X" : "_"} ,{"  "}
+          {wrongGuesses >= 2 ? "X" : "_"} , {wrongGuesses >= 3 ? "X" : "_"}
         </div>
       </div>
     </div>

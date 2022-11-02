@@ -7,10 +7,19 @@ function Score() {
   const location = useLocation();
   const { playerScore, imageName } = location.state;
   const [nameInput, setNameInput] = useState("");
+  const [tooShort, setTooShort] = useState(false);
+  const [tooLong, setTooLong] = useState(false);
   const [redirectHome, setRedirectHome] = useState(false);
 
   function recordScore() {
     if (!nameInput.length || nameInput.length > 8) {
+      if (!nameInput.length) {
+        setTooLong(false);
+        setTooShort(true);
+      } else {
+        setTooShort(false);
+        setTooLong(true);
+      }
       return;
     }
     const scoreRef = collection(db, imageName);
@@ -36,6 +45,12 @@ function Score() {
         <div>Image: {imageName}</div>
         <div>Score: {playerScore}</div>
         <button onClick={() => recordScore()}>Enter Score</button>
+        {tooShort && <div className="invalidForm">You need to add a name.</div>}
+        {tooLong && (
+          <div className="invalidForm">
+            The name can only be, at most, eight characters long.
+          </div>
+        )}
         {redirectHome && <Navigate to="/" />}
       </div>
     </div>

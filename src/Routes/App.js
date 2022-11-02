@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Scoreboard from "../Components/Scoreboard";
 import { StoreContext } from "../Components/Data";
 import { useContext } from "react";
+import Instructions from "../Components/Instructions";
 
 function App() {
   const { imageDataStore, loadingBoolStore } = useContext(StoreContext);
@@ -14,6 +15,7 @@ function App() {
         <div className="app">
           <div className="navbar">
             <p>Choose Any Image To Start</p>
+            <Instructions />
           </div>
           {loadingBool && (
             <div id="appBody">

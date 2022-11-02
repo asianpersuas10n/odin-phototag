@@ -14,7 +14,7 @@ root.render(
     <StoreProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<App />} />
+          <Route path="*" element={<App />} />
           <Route path="game" element={<Game />} />
           <Route path="score" element={<Score />} />
         </Routes>

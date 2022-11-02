@@ -199,7 +199,7 @@ function Game() {
         objectsFound={objectsFound}
       />
       {buttonBool && (
-        <div id="buttonContainer">
+        <div className="buttonContainer">
           <button onClick={() => gameStart()}>start</button>
         </div>
       )}
