@@ -52,7 +52,7 @@ body {
 #homeButton {
   color: white;
   text-decoration: none;
-  padding-right: 2.5vw;
+  margin-right: 2.5vw;
 }
 
 #currentFind {
