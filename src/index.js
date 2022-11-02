@@ -6,6 +6,7 @@ import App from "./Routes/App";
 import Game from "./Routes/Game";
 import Score from "./Routes/Score";
 import StoreProvider from "./Components/Data";
+import "./Font/Roboto-Light.ttf";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -1,4 +1,4 @@
-import { Navigate, useLocation } from "react-router-dom";
+import { Link, Navigate, useLocation } from "react-router-dom";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../Firebase";
 import { useState } from "react";
@@ -10,7 +10,7 @@ function Score() {
   const [redirectHome, setRedirectHome] = useState(false);
 
   function recordScore() {
-    if (!nameInput.length || nameInput.length > 4) {
+    if (!nameInput.length || nameInput.length > 8) {
       return;
     }
     const scoreRef = collection(db, imageName);
@@ -19,20 +19,25 @@ function Score() {
   }
 
   return (
-    <div className="score">
-      <form>
-        <label htmlFor="name">Name:</label>
-        <input
-          id="name"
-          onChange={(e) => {
-            setNameInput(e.target.value);
-          }}
-        />
-      </form>
-      <div>Image: {imageName}</div>
-      <div>Score: {playerScore}</div>
-      <button onClick={() => recordScore()}>Enter Score</button>
-      {redirectHome && <Navigate to="/" />}
+    <div>
+      <Link to="/" id="homeButton" className="navbar">
+        If You Don't Want To Submit Your Score Click Here To Go Back To Start
+      </Link>
+      <div className="score">
+        <form>
+          <label htmlFor="name">Name:</label>
+          <input
+            id="name"
+            onChange={(e) => {
+              setNameInput(e.target.value);
+            }}
+          />
+        </form>
+        <div>Image: {imageName}</div>
+        <div>Score: {playerScore}</div>
+        <button onClick={() => recordScore()}>Enter Score</button>
+        {redirectHome && <Navigate to="/" />}
+      </div>
     </div>
   );
 }

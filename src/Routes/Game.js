@@ -1,6 +1,9 @@
 import Navbar from "../Components/Navbar";
 import { useLocation, Navigate } from "react-router-dom";
 import { useState, useRef } from "react";
+import React from "react";
+import { ReactComponent as Right } from "../Images/right.svg";
+import { ReactComponent as Wrong } from "../Images/wrong.svg";
 
 function Game() {
   const location = useLocation();
@@ -14,6 +17,8 @@ function Game() {
   const [redirect, setRedirect] = useState(false);
   const [score, setScore] = useState(0);
   const [buttonBool, setButtonBool] = useState(true);
+  const translateRight = document.querySelector("#right");
+  const translateWrong = document.querySelector("#wrong");
 
   //gets the coordinates from a click on an image
 
@@ -64,23 +69,43 @@ function Game() {
     setButtonBool(false);
   }
 
+  //finds input x y checks if it is inbetween the provided x y posisions from object find
+  //loads up a svg at the position of your click based if you got it right or wrong
+
   function gameLogic(e) {
     const input = getCoordinates(e);
     const [inputX, inputY] = input;
     const { left, right, top, bottom } = currentFind;
     let tempObjectsFound = objectsFound;
     let tepmWrongGuess = wrongGuesses;
+    let translate;
 
     if (inputX > left && inputX < right && inputY > top && inputY < bottom) {
       setObjectsFound((current) => current + 1);
       tempObjectsFound += 1;
-      randomizer();
+      translate =
+        "translate3d(" + (inputX - 45) + "px," + (inputY - 45) + "px, 0)";
+      translateRight.style.transform = translate;
+      translateRight.classList.toggle("hidden");
+      setTimeout(() => {
+        translateRight.classList.toggle("hidden");
+      }, 250);
+
       if (tempObjectsFound === 3) {
         gameEnd(true);
+        return;
       }
+      randomizer();
     } else {
       setWrongGuesses((current) => current + 1);
       tepmWrongGuess += 1;
+      translate =
+        "translate3d(" + (inputX - 45) + "px," + (inputY - 45) + "px, 0)";
+      translateWrong.style.transform = translate;
+      translateWrong.classList.toggle("hidden");
+      setTimeout(() => {
+        translateWrong.classList.toggle("hidden");
+      }, 250);
       if (tepmWrongGuess === 3) {
         gameEnd(false);
       }
@@ -118,7 +143,7 @@ function Game() {
     }
 
     //if(3 x's or 3 objects found stop timer push user to scoreboard and create score)
-    setRedirect(true);
+    setTimeout(() => setRedirect(true), 250);
   }
 
   // timer is created and upkept here
@@ -167,7 +192,12 @@ function Game() {
 
   return (
     <div className="game">
-      <Navbar currentFindName={currentFind.name} time={time} />
+      <Navbar
+        currentFindName={currentFind.name}
+        time={time}
+        wrongGuesses={wrongGuesses}
+        objectsFound={objectsFound}
+      />
       {buttonBool && (
         <div id="buttonContainer">
           <button onClick={() => gameStart()}>start</button>
@@ -175,6 +205,8 @@ function Game() {
       )}
       <div id="gameBody">
         <div id="gameImageContainer">
+          <Wrong id="wrong" className="hidden" />
+          <Right id="right" className="hidden" />
           <img
             id="myImgId"
             src={pictureLink}
