@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/odin-phototag/static/css/main.d107e390.css",
-    "main.js": "/odin-phototag/static/js/main.2c777975.js",
+    "main.js": "/odin-phototag/static/js/main.e17b87cb.js",
     "static/media/photo5.jpg": "/odin-phototag/static/media/photo5.20437600b36dde97602d.jpg",
     "static/media/photo1.jpeg": "/odin-phototag/static/media/photo1.cd6eed140c956e1b2227.jpeg",
     "static/media/photo3.jpg": "/odin-phototag/static/media/photo3.cd07f27754a7b08f2c7c.jpg",
@@ -13,10 +13,10 @@
     "static/media/right.svg": "/odin-phototag/static/media/right.91e90615307ea39440c4d878202cd6df.svg",
     "index.html": "/odin-phototag/index.html",
     "main.d107e390.css.map": "/odin-phototag/static/css/main.d107e390.css.map",
-    "main.2c777975.js.map": "/odin-phototag/static/js/main.2c777975.js.map"
+    "main.e17b87cb.js.map": "/odin-phototag/static/js/main.e17b87cb.js.map"
   },
   "entrypoints": [
     "static/css/main.d107e390.css",
-    "static/js/main.2c777975.js"
+    "static/js/main.e17b87cb.js"
   ]
 }
